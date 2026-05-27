@@ -1,0 +1,152 @@
+==============================================================================
+ LCG (Lasana Cahaya Gemilang) — PROJECT NOTES
+ STATUS: MOCKUP ONLY. Not a production system. Built for demonstration.
+ Last updated: 2026-05-27
+==============================================================================
+
+------------------------------------------------------------------------------
+1. WHAT THIS PROJECT IS
+------------------------------------------------------------------------------
+A 5-page static marketing website for "Lasana Cahaya Gemilang" (LCG), a
+fictional creative platform for sustainable innovation (water infrastructure,
+energy transition, logistics).
+
+This is a MOCKUP for visual/demo purposes only. There is no backend, no
+database, and no real form submission (the contact form logs to the browser
+console and shows a success message; it does not send anything anywhere).
+
+IMPORTANT CONTEXT — this repo is NOT a clean LCG repo. It is a clone of the
+open-source "impeccable" design-skills monorepo (github.com/pbakaus/impeccable).
+The LCG site was added on top of it by dropping pages into site/pages/. That is
+why the repo also contains a large amount of unrelated impeccable code, docs,
+tests, CLI, browser extension, and heavy build tooling. The LCG site only uses
+a tiny slice of it (Astro + a single CSS file).
+
+------------------------------------------------------------------------------
+2. THE LCG SITE FILES (the only files that matter for the mockup)
+------------------------------------------------------------------------------
+  site/pages/index.astro     -> Home (hero, strengths, latest insights, CTA)
+  site/pages/about.astro      -> About Us (History + Vision & Mission, Values)
+  site/pages/services.astro   -> Services (Water Supply, Energy Transition,
+                                 Logistic Network) + "Our Approach"
+  site/pages/insight.astro    -> Insight (4 article cards + newsletter form)
+  site/pages/contact.astro    -> Contact (info + message form + "what's next")
+  site/layouts/Layout.astro   -> Shared HTML shell (loads Inter font from CDN)
+  site/styles/lcg.css         -> ALL site styling (design tokens, components)
+
+Design language: clean whitespace minimalism, light theme, glassmorphic cards
+(backdrop-filter blur, ~28-32px rounded corners), soft brown-orange accent
+color = oklch(62% 0.12 40). Logo highlights only the "G" in "Gemilang".
+
+Everything else in the repo (skill/, cli/, extension/, scripts/, tests/,
+site/content/, the impeccable marketing pages under site/pages/docs, /slop,
+/tutorials, etc.) belongs to impeccable and is NOT part of the LCG mockup.
+
+------------------------------------------------------------------------------
+3. HOW TO RUN LOCALLY
+------------------------------------------------------------------------------
+Prerequisite: install dependencies once (uses bun; bun.lock is committed):
+
+    bun install
+
+Start the dev server. The mockup has been run on PORT 9999:
+
+    npx astro dev --port 9999
+
+Then open:  http://localhost:9999
+
+Notes:
+  - `bun run dev` also works but uses Astro's default port (4321), not 9999.
+  - Astro config lives in astro.config.mjs at the repo root:
+        srcDir   = ./site        (pages/layouts/styles live under site/)
+        outDir   = ./build        (build output goes to build/, NOT dist/)
+        output   = static
+        format   = directory      (routes become /about/index.html, etc.)
+  - CSS / page / component edits hot-reload. No restart needed.
+
+TO STOP THE DEV SERVER:
+  Find it:   lsof -ti :9999
+  Kill it:   kill <PID>        (or: kill $(lsof -ti :9999))
+  The process shows up as: node .../node_modules/.bin/astro dev --port 9999
+
+------------------------------------------------------------------------------
+4. DEPENDENCIES
+------------------------------------------------------------------------------
+What the LCG MOCKUP actually needs:
+  - astro (declared as a devDependency, version ^6.2.1) -> the static site
+    generator that builds the pages.
+  - Inter font -> loaded at runtime from Google Fonts CDN (no package).
+  That's it. The LCG pages import only Layout.astro and lcg.css.
+
+What is ALSO installed (because this is the impeccable monorepo) but the LCG
+mockup does NOT use directly:
+  - motion, @paper-design/shaders        (impeccable marketing-page visuals)
+  - playwright, puppeteer (optional)     (impeccable tests / screenshots;
+                                          puppeteer tries to download Chromium)
+  - wrangler                             (Cloudflare deploy tooling)
+  - @ai-sdk/*, ai, @anthropic-ai/*, @google/genai, zod  (impeccable eval/live)
+  - archiver, modern-screenshot          (build/screenshot tooling)
+  Runtime deps of impeccable's CLI: css-select, css-tree, domutils,
+  htmlparser2, marked.
+
+Package manager: bun (bun.lock present). pnpm-lock.yaml is also present (legacy
+from impeccable); prefer bun to stay consistent.
+
+WARNING: a full `bun install` pulls the heavy deps above and is slow. They are
+needed for impeccable's own pages to BUILD, but not to run/develop the LCG
+pages. If you ever split LCG into its own clean repo, you would only need astro.
+
+------------------------------------------------------------------------------
+5. VERCEL DEPLOYMENT
+------------------------------------------------------------------------------
+GitHub repo:     https://github.com/anggaGenk/lcg-dev2  (branch: main)
+Vercel project:  lcg-dev2  (connected to the GitHub repo, auto-deploys on push)
+Hosting type:    static site, no environment variables.
+
+HISTORY / WHY THERE WAS A 404:
+  Vercel auto-detected Astro and used its defaults: build command `npm run
+  build` (which here runs the heavy impeccable skill build) and output
+  directory `dist`. But this project outputs to `build`, and `dist` has no site
+  index.html -> 404 NOT_FOUND. Redeploys did not help because the heavy build
+  could also fail, leaving the old broken deployment live.
+
+CURRENT FIX — vercel.json (at repo root) tells Vercel to SERVE A PREBUILT
+output instead of building the monorepo itself:
+
+    {
+      "framework": null,
+      "installCommand": "echo 'no install needed'",
+      "buildCommand": "echo 'serving prebuilt output'",
+      "outputDirectory": "build"
+    }
+
+The build/ directory is PREBUILT LOCALLY and COMMITTED to git (it is normally
+gitignored, so it was force-added with `git add -f build/`). Vercel runs no
+real install or build; it just serves the committed static files in build/.
+This removes every build-side failure mode on Vercel.
+
+>>> HOW TO UPDATE THE LIVE SITE AFTER EDITING PAGES <<<
+  1. Edit files under site/ (pages, layout, lcg.css).
+  2. Rebuild the static output:        npx astro build
+     (this regenerates build/)
+  3. Commit BOTH your source changes AND the build output:
+        git add site/ && git add -f build/
+        git commit -m "Update LCG site"
+  4. Push:                             git push origin main
+  5. Vercel auto-deploys the new build/ within ~1 minute.
+  If you forget step 2-3, the live site will NOT change, because Vercel only
+  serves the committed build/ — it does not rebuild.
+
+POSSIBLE REMAINING VERCEL GOTCHA (check in the Vercel dashboard if a 404
+persists): Settings -> Build & Output -> Root Directory must be the repo root
+(empty/default). If it points elsewhere, build/ will not be found.
+
+------------------------------------------------------------------------------
+6. BRINGING THIS BACK UP IN THE FUTURE (quick checklist)
+------------------------------------------------------------------------------
+  [ ] bun install                       (only if node_modules is missing)
+  [ ] npx astro dev --port 9999         (local preview at localhost:9999)
+  [ ] edit site/pages/*.astro + site/styles/lcg.css
+  [ ] npx astro build                   (regenerate build/)
+  [ ] git add site/ && git add -f build/ && git commit && git push
+==============================================================================

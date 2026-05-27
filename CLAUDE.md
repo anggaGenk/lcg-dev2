@@ -1,5 +1,16 @@
 # Project Instructions for Claude
 
+## READ FIRST: LCG mockup context
+
+This repo also hosts a separate **LCG (Lasana Cahaya Gemilang) mockup website**
+(a 5-page Astro static site under `site/pages/`), layered on top of the
+impeccable monorepo. If the user mentions LCG, the website/mockup, the dev
+server, port 9999, or Vercel deployment, **read `extraNotes.txt` at the repo
+root first** — it documents what the mockup is, how to run it (port 9999),
+its dependencies, and exactly how the Vercel deploy works (serves a committed
+prebuilt `build/` directory; rebuild + force-commit `build/` to update the
+live site). The rest of this file is impeccable-project guidance.
+
 ## Skill bootstrap: skip the post-update-cleanup step
 
 The `<post-update-cleanup>` block at the top of `.claude/skills/impeccable/SKILL.md` runs `scripts/cleanup-deprecated.mjs` and then self-deletes. **Do not run it in this repo, and do not delete the block.** This repo is the source of truth for the Impeccable skill; the cleanup script scans for "leftover" skill files to remove and its judgment doesn't fit a repo where the skill lives in `skill/`. The block is also regenerated from `skill/SKILL.md` on every `bun run build`, so any deletion churns back on the next build. Skip the step silently and proceed.
