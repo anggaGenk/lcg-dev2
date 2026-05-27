@@ -1,0 +1,155 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/lcg.css';
+---
+
+<Layout title="About Us - LCG">
+  <header>
+    <nav>
+      <div class="logo-group">
+        <a href="/" class="logo">LC<span class="accent">G</span></a>
+        <span class="logo-text">
+          Lasana Cahaya <span class="accent">G</span>emilang
+        </span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about" class="active">About Us</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/insight">Insight</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" style="min-height: 60vh;">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="word">About</span>
+        <span class="word">Us</span>
+      </h1>
+      <p class="hero-subtitle">
+        Lasana Cahaya Gemilang: Illuminating pathways to sustainable innovation through bold design and strategic vision.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Story</h2>
+      </div>
+
+      <div style="display: flex; gap: var(--space-3xl); flex-direction: column;">
+        <!-- History Tab -->
+        <div class="card-feature">
+          <h3>History</h3>
+          <p>
+            Lasana Cahaya Gemilang was founded with a singular vision: to bridge the gap between technological innovation and sustainable impact. What began as a small collective of designers and strategists has evolved into a full-service creative platform serving organizations across water infrastructure, renewable energy, and global logistics.
+          </p>
+          <p>
+            Over the past decade, we've worked with leading institutions to design systems that matter. From water purification networks in Southeast Asia to energy transition frameworks for mid-market enterprises, our work has always centered on one principle: design that serves humanity and the planet.
+          </p>
+          <p>
+            Today, LCG stands as a beacon of thoughtful innovation—proof that business and sustainability aren't opposing forces, but natural partners when guided by vision and craft.
+          </p>
+        </div>
+
+        <!-- Vision & Mission Tab -->
+        <div class="card-feature">
+          <h3>Vision & Mission</h3>
+          <p>
+            <strong>Our Vision:</strong> A world where sustainable infrastructure is the default, where renewable energy powers human progress, and where global logistics serve communities rather than exploit them.
+          </p>
+          <p>
+            <strong>Our Mission:</strong> To create strategic design solutions that accelerate the transition to sustainable systems. We believe great design is invisible—it solves problems so elegantly that users forget they were ever problems at all.
+          </p>
+          <p>
+            We work at the intersection of three disciplines:
+          </p>
+          <ul style="max-width: 75ch; margin: var(--space-lg) 0;">
+            <li><strong>Strategic Thinking</strong> — Understanding the true needs beneath stated problems</li>
+            <li><strong>Design Excellence</strong> — Crafting interfaces and systems with precision and beauty</li>
+            <li><strong>Systems Thinking</strong> — Recognizing how each piece affects the whole</li>
+          </ul>
+          <p>
+            This is how we create impact that lasts.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background-color: var(--color-surface-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Values</h2>
+        <p>The principles that guide every decision.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <h3>Radical Honesty</h3>
+          <p>We tell you what we think, not what you want to hear. Trust is built on truth.</p>
+        </div>
+        <div class="card">
+          <h3>Craft Above All</h3>
+          <p>Every detail matters. We obsess over the work because the work matters.</p>
+        </div>
+        <div class="card">
+          <h3>Systems Thinking</h3>
+          <p>We don't solve problems in isolation. We understand how solutions ripple across systems.</p>
+        </div>
+        <div class="card">
+          <h3>Sustainable Impact</h3>
+          <p>Short-term wins mean nothing. We design for decades, not quarters.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Let's Work Together</h2>
+        <p>Whether you're tackling water infrastructure, transitioning to renewables, or optimizing global supply chains, we're ready to partner.</p>
+      </div>
+      <div style="text-align: center;">
+        <a href="/contact" class="btn btn-primary">Start a Conversation</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>About LCG</h4>
+        <p>Lasana Cahaya Gemilang is a creative platform dedicated to sustainable innovation and design excellence.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Explore</h4>
+        <p><a href="/services">Services</a></p>
+        <p><a href="/insight">Insight</a></p>
+        <p><a href="/about">About Us</a></p>
+      </div>
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <p><a href="/contact">Contact</a></p>
+        <p><a href="mailto:hello@lcg.creative">hello@lcg.creative</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Lasana Cahaya Gemilang. All rights reserved.</p>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  ul {
+    padding-left: var(--space-lg);
+    line-height: 1.8;
+  }
+
+  li {
+    margin-bottom: var(--space-md);
+  }
+</style>

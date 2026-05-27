@@ -1,0 +1,241 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/lcg.css';
+---
+
+<Layout title="Contact - LCG">
+  <header>
+    <nav>
+      <div class="logo-group">
+        <a href="/" class="logo">LC<span class="accent">G</span></a>
+        <span class="logo-text">
+          Lasana Cahaya <span class="accent">G</span>emilang
+        </span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/insight">Insight</a></li>
+        <li><a href="/contact" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" style="min-height: 60vh;">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="word">Let's</span>
+        <span class="word">Talk</span>
+      </h1>
+      <p class="hero-subtitle">
+        Ready to collaborate on something meaningful? We'd love to hear from you.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: var(--space-3xl); align-items: start;">
+        <!-- Contact Information -->
+        <div>
+          <h2 style="margin-top: 0; margin-bottom: var(--space-2xl);">Get in Touch</h2>
+
+          <div style="margin-bottom: var(--space-2xl);">
+            <h3 style="margin-top: 0; margin-bottom: var(--space-md); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.02em; color: var(--color-text-secondary);">Email</h3>
+            <a href="mailto:hello@lcg.creative" style="color: var(--color-brand-primary); font-weight: 500; text-decoration: none; font-size: 1.125rem;">
+              hello@lcg.creative
+            </a>
+          </div>
+
+          <div style="margin-bottom: var(--space-2xl);">
+            <h3 style="margin-top: 0; margin-bottom: var(--space-md); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.02em; color: var(--color-text-secondary);">Phone</h3>
+            <a href="tel:+6221234567" style="color: var(--color-brand-primary); font-weight: 500; text-decoration: none; font-size: 1.125rem;">
+              +62 (21) 1234-567
+            </a>
+          </div>
+
+          <div style="margin-bottom: var(--space-2xl);">
+            <h3 style="margin-top: 0; margin-bottom: var(--space-md); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.02em; color: var(--color-text-secondary);">Location</h3>
+            <p style="margin: 0; color: var(--color-text-primary); line-height: 1.6;">
+              Jakarta, Indonesia<br />
+              Southeast Asia Regional Office
+            </p>
+          </div>
+
+          <div style="padding: var(--space-lg); background-color: var(--color-surface-primary); border-radius: var(--radius-lg); border: 1px solid var(--color-border-primary);">
+            <h3 style="margin-top: 0; margin-bottom: var(--space-md); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.02em; color: var(--color-text-secondary);">Response Time</h3>
+            <p style="margin: 0; color: var(--color-text-primary);">
+              We typically respond to inquiries within 24 hours during business days.
+            </p>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div>
+          <h2 style="margin-top: 0; margin-bottom: var(--space-2xl);">Send us a Message</h2>
+          <form id="contact-form" style="display: flex; flex-direction: column; gap: var(--space-lg);">
+            <!-- Name Field -->
+            <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
+              <label for="name" style="font-weight: 500; color: var(--color-text-primary); font-size: 0.875rem;">Your Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="John Doe"
+                required
+                style="padding: var(--space-md); border: 1px solid var(--color-border-primary); border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; background-color: var(--color-surface-secondary);"
+              />
+            </div>
+
+            <!-- Email Field -->
+            <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
+              <label for="email" style="font-weight: 500; color: var(--color-text-primary); font-size: 0.875rem;">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@example.com"
+                required
+                style="padding: var(--space-md); border: 1px solid var(--color-border-primary); border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; background-color: var(--color-surface-secondary);"
+              />
+            </div>
+
+            <!-- Phone Field -->
+            <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
+              <label for="phone" style="font-weight: 500; color: var(--color-text-primary); font-size: 0.875rem;">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+62 (21) 1234-567"
+                style="padding: var(--space-md); border: 1px solid var(--color-border-primary); border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; background-color: var(--color-surface-secondary);"
+              />
+            </div>
+
+            <!-- Subject Field -->
+            <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
+              <label for="subject" style="font-weight: 500; color: var(--color-text-primary); font-size: 0.875rem;">Subject</label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder="How can we help?"
+                required
+                style="padding: var(--space-md); border: 1px solid var(--color-border-primary); border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; background-color: var(--color-surface-secondary);"
+              />
+            </div>
+
+            <!-- Message Field -->
+            <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
+              <label for="message" style="font-weight: 500; color: var(--color-text-primary); font-size: 0.875rem;">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Tell us about your project, challenge, or opportunity..."
+                required
+                rows="6"
+                style="padding: var(--space-md); border: 1px solid var(--color-border-primary); border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; background-color: var(--color-surface-secondary); resize: vertical; min-height: 150px;"
+              ></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: var(--space-md);">
+              Send Message
+            </button>
+
+            <!-- Success Message (hidden by default) -->
+            <div id="success-message" style="display: none; padding: var(--space-md); background-color: var(--color-success); color: white; border-radius: var(--radius-md); text-align: center; font-weight: 500;">
+              Thank you! We've received your message and will be in touch soon.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background-color: var(--color-surface-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <h2>What Happens Next</h2>
+        <p>Here's how we work together.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <h3>01. Initial Conversation</h3>
+          <p>We'll reach out within 24 hours to discuss your needs, timeline, and goals.</p>
+        </div>
+        <div class="card">
+          <h3>02. Scoping Session</h3>
+          <p>We'll dive deeper and create a proposal that outlines our approach and investment.</p>
+        </div>
+        <div class="card">
+          <h3>03. Partnership Begins</h3>
+          <p>We'll kick off the project with full collaboration, regular updates, and transparent communication.</p>
+        </div>
+        <div class="card">
+          <h3>04. Deliver & Support</h3>
+          <p>We ship the work and stay engaged to ensure success and maximize impact.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>About LCG</h4>
+        <p>Lasana Cahaya Gemilang is a creative platform dedicated to sustainable innovation and design excellence.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Explore</h4>
+        <p><a href="/services">Services</a></p>
+        <p><a href="/insight">Insight</a></p>
+        <p><a href="/about">About Us</a></p>
+      </div>
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <p><a href="/contact">Contact</a></p>
+        <p><a href="mailto:hello@lcg.creative">hello@lcg.creative</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Lasana Cahaya Gemilang. All rights reserved.</p>
+    </div>
+  </footer>
+</Layout>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const successMessage = document.getElementById('success-message');
+
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Get form data
+      const formData = new FormData(form);
+      const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        subject: formData.get('subject'),
+        message: formData.get('message'),
+      };
+
+      // Log the data (in production, send to server)
+      console.log('Contact form submitted:', data);
+
+      // Show success message
+      successMessage.style.display = 'block';
+      form.style.display = 'none';
+
+      // Reset form after 2 seconds
+      setTimeout(() => {
+        form.reset();
+        form.style.display = 'flex';
+        successMessage.style.display = 'none';
+      }, 3000);
+    });
+  }
+</script>

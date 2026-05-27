@@ -1,0 +1,145 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/lcg.css';
+---
+
+<Layout title="Insight - LCG">
+  <header>
+    <nav>
+      <div class="logo-group">
+        <a href="/" class="logo">LC<span class="accent">G</span></a>
+        <span class="logo-text">
+          Lasana Cahaya <span class="accent">G</span>emilang
+        </span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/insight" class="active">Insight</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" style="min-height: 60vh;">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="word">Insights</span>
+      </h1>
+      <p class="hero-subtitle">
+        Exploring the trends shaping energy, water, and logistics for a sustainable future.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Latest Articles</h2>
+        <p>Deep dives into energy transition, renewable innovation, and infrastructure transformation.</p>
+      </div>
+
+      <div class="grid">
+        <!-- Article 1 -->
+        <article class="card-feature">
+          <span style="color: var(--color-brand-primary); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.02em;">Energy Transition</span>
+          <h3 style="margin-top: var(--space-md);">The Renewable Revolution: 2026 and Beyond</h3>
+          <p>
+            Global renewable energy capacity is doubling faster than ever before. In 2026 alone, solar installations exceeded all fossil fuel capacity additions combined. We explore what this tipping point means for grid infrastructure, energy economics, and the future of electricity.
+          </p>
+          <p style="color: var(--color-text-secondary); font-size: 0.875rem;">
+            <strong>Key themes:</strong> Grid modernization, storage solutions, policy acceleration, investment flows, and the geopolitics of renewable manufacturing.
+          </p>
+          <a href="#" class="accent" style="font-weight: 600;">Read the full article →</a>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="card-feature">
+          <span style="color: var(--color-brand-primary); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.02em;">Smart Infrastructure</span>
+          <h3 style="margin-top: var(--space-md);">Smart Grids: Decentralizing Power Distribution</h3>
+          <p>
+            The monolithic power grid is evolving. Distributed energy resources—solar, wind, batteries, electric vehicles—are reshaping electricity generation and consumption. We examine how smart grids enable prosumers, improve resilience, and accelerate the transition to decentralized energy.
+          </p>
+          <p style="color: var(--color-text-secondary); font-size: 0.875rem;">
+            <strong>Key themes:</strong> Microgrid architecture, demand response, real-time pricing, battery technology, edge computing, and cybersecurity.
+          </p>
+          <a href="#" class="accent" style="font-weight: 600;">Read the full article →</a>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="card-feature">
+          <span style="color: var(--color-brand-primary); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.02em;">Water Security</span>
+          <h3 style="margin-top: var(--space-md);">Water Security in a Warming World</h3>
+          <p>
+            Climate change is fundamentally altering water availability. Droughts intensify in some regions while floods devastate others. We investigate innovative solutions—from advanced desalination to watershed management—and how smart infrastructure can ensure water security for generations to come.
+          </p>
+          <p style="color: var(--color-text-secondary); font-size: 0.875rem;">
+            <strong>Key themes:</strong> Climate adaptation, desalination innovation, water recycling, aquifer protection, transboundary cooperation, and conservation design.
+          </p>
+          <a href="#" class="accent" style="font-weight: 600;">Read the full article →</a>
+        </article>
+
+        <!-- Article 4 -->
+        <article class="card-feature">
+          <span style="color: var(--color-brand-primary); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.02em;">Sustainable Logistics</span>
+          <h3 style="margin-top: var(--space-md);">Logistics Meets Sustainability: Decarbonizing Global Supply</h3>
+          <p>
+            The logistics industry accounts for 10% of global emissions. Yet it's also on the front lines of transformation. Electric vehicles, route optimization AI, circular economy models, and supplier accountability networks are fundamentally reshaping how goods move around the world.
+          </p>
+          <p style="color: var(--color-text-secondary); font-size: 0.875rem;">
+            <strong>Key themes:</strong> EV adoption, last-mile solutions, supply chain transparency, carbon accounting, supplier engagement, and reverse logistics.
+          </p>
+          <a href="#" class="accent" style="font-weight: 600;">Read the full article →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background-color: var(--color-surface-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Stay Informed</h2>
+        <p>Get the latest insights delivered to your inbox. Monthly updates on energy, water, and logistics transformation.</p>
+      </div>
+
+      <form style="max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--space-md);">
+        <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
+          <label for="email" style="font-weight: 500; color: var(--color-text-primary);">Email address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            required
+            style="padding: var(--space-md); border: 1px solid var(--color-border-primary); border-radius: var(--radius-md); font-family: inherit; font-size: 1rem;"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>About LCG</h4>
+        <p>Lasana Cahaya Gemilang is a creative platform dedicated to sustainable innovation and design excellence.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Explore</h4>
+        <p><a href="/services">Services</a></p>
+        <p><a href="/insight">Insight</a></p>
+        <p><a href="/about">About Us</a></p>
+      </div>
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <p><a href="/contact">Contact</a></p>
+        <p><a href="mailto:hello@lcg.creative">hello@lcg.creative</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Lasana Cahaya Gemilang. All rights reserved.</p>
+    </div>
+  </footer>
+</Layout>
