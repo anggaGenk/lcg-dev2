@@ -1,5 +1,6 @@
 {
-  "buildCommand": "bun run build:site",
-  "outputDirectory": "./build",
-  "installCommand": "bun install"
+  "framework": null,
+  "installCommand": "bun install",
+  "buildCommand": "npx astro build",
+  "outputDirectory": "build"
 }
