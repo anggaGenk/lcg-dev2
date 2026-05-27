@@ -6,41 +6,42 @@ brand
 
 ## Users
 
-Designers, product managers, and engineers who use AI coding tools (Cursor, Claude Code, Gemini CLI, Codex CLI, and others) and want better design output from their AI. They land on the site from GitHub, social media, or word of mouth, already aware that AI-generated UIs have quality problems. They're looking for a practical solution, not education about the problem.
+Creative professionals, designers, and artists who want to build, showcase, and share their creative work. They discover LCG through design communities, creative networks, and word-of-mouth. They're looking for a platform that respects craft and doesn't compromise on visual quality or creative freedom.
 
 ## Product Purpose
 
-Impeccable gives builders a shared design vocabulary with their AI, delivered as a plug-and-play skill that works in every major AI coding harness. Success is measured in two ways: (1) the user can steer AI output with design precision instead of vague prose, and (2) the AI produces interfaces that pass professional design review, not "looks like an AI made it" output.
+Lasana Cahaya Gemilang (LCG) is a creative design platform that empowers designers and artists to create, collaborate, and showcase exceptional work. The platform removes friction from the creative process, allowing makers to focus on craft rather than technical overhead. Success is measured by how effortlessly creators can express their vision and how compelled viewers are to engage with the work.
 
 ## Brand Personality
 
-Expert, opinionated, refined. Impeccable speaks with an authoritative design voice: confident taste, editorial quality, zero hedging. It's the design director in the room who knows exactly what's wrong and how to fix it. The tone is **direct** (no "maybe consider"), **specific** (no "improve the vibe"), and **rooted in craft** (no hype, no hedging).
+Visionary, bold, expressive. LCG speaks as a creative collaborator—confident in design principles, enthusiastic about craft, and uncompromising about quality. The tone is **directional** (not apologetic), **inspiring** (not prescriptive), and **grounded in creative excellence** (not trend-chasing).
 
-Three-word personality: **expert, decisive, editorial**.
+Three-word personality: **bold, creative, expressive**.
 
 ## Anti-references
 
-The site and brand must be the antithesis of everything Impeccable critiques. Specifically, avoid:
+The platform explicitly avoids:
 
-- **Generic AI tool marketing**: dark mode with purple gradients, neon accents, glassmorphism, glowing particles, cyan-on-black.
-- **SaaS landing-page clichés**: hero-metric layouts, identical-card feature grids, sparkline decorations, "boost your productivity" copy.
-- **Hedging language**: "might", "could", "consider", "perhaps". Impeccable is opinionated — it picks a direction and commits.
-- **Educational framing**: this product is for people who already know they have a problem; we solve it, we don't teach it.
-- **Over-decoration**: every visual element must earn its place. No ornament for ornament's sake.
+- **Generic SaaS aesthetic**: purple gradients, glowing neon accents, hero metrics layouts, identical-card feature grids, glassmorphism, or any visual language that signals "corporate software."
+- **Over-decoration**: every element must serve the work, not distract from it. No ornament for ornament's sake.
+- **Trend-chasing**: temporary AI aesthetics, generic design-tool visual language, or any surface that screams "made with a trend checker."
+- **Hedging language**: "might help," "could enhance," "perhaps consider." LCG is confident about design and creative direction.
+- **Tutorial/educational framing**: this is for practitioners, not beginners needing hand-holding. Assume expertise.
 
 ## Design Principles
 
-1. **Practice what you preach.** The site must pass its own anti-pattern tests with flying colors. If we ship anything we'd flag in an audit, we've lost.
-2. **Show, don't tell.** Demonstrate design quality through execution, not through words about design quality. The site IS the demo.
-3. **Expert confidence.** Direct, opinionated, decisive. No hedging. Every assertion should sound like it comes from someone who has seen a thousand interfaces and knows what works.
-4. **Editorial over marketing.** Feels like a design publication (Eye Magazine, It's Nice That, A List Apart) rather than a SaaS landing page. Long-form reading, considered typography, breathing room.
-5. **Purposeful restraint.** Every element earns its place. Nothing decorative without function. Nothing included because "landing pages usually have that".
+1. **Work-first, interface-second.** Every design decision serves to showcase creative work, never to draw attention to the interface itself.
+2. **Radical simplicity in service of expression.** Remove friction and cognitive load so creators can focus entirely on their craft.
+3. **Boldness without compromise.** Take design risks that reflect creative confidence. Avoid the safe middle ground.
+4. **Respect the craft.** Honor design fundamentals—hierarchy, contrast, rhythm, negative space. The platform itself must exemplify these.
+5. **Creator-centric, not trend-centric.** Celebrate timeless craft over algorithmic novelty. The platform ages well.
 
 ## Accessibility & Inclusion
 
-Baseline: WCAG 2.1 AA on all pages. Key commitments:
-- Color contrast ratios verified with actual contrast checks, not eyeballing.
+Baseline: WCAG 2.1 AA on all pages.
+
 - All interactive elements keyboard-navigable with visible focus states.
-- `prefers-reduced-motion` respected for every animation.
-- Semantic HTML first, ARIA as a supplement, never as a workaround.
-- Copy readable at an 8th-grade level; jargon only when precisely needed (design terms like "OKLCH", "chroma" are acceptable because they're the actual vocabulary users are here to learn).
+- Color contrast verified on actual text and UI elements.
+- `prefers-reduced-motion` respected for all animations.
+- Creative work is displayed at maximum fidelity regardless of user device or connection speed.
+- Interface copy is clear and direct, using standard design terminology where appropriate.
