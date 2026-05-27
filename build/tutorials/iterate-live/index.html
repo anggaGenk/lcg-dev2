@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Iterate on UI with Live Mode | Impeccable</title><meta name="description" content="Use /impeccable live to visually iterate on a real element in your dev server: pick, annotate, generate three variants, accept the one you want, and have it written back to source."><meta name="theme-color" content="#fafafa"><link rel="canonical" href="https://impeccable.style/tutorials/iterate-live"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/sub-pages.Bf7JjCEI.css">
+<link rel="stylesheet" href="/_astro/_..DOvKa454.css"></head> <body class="sub-page"> <a href="#main" class="skip-link">Skip to content</a>  <header class="site-header" data-site-header> <a href="/" class="site-header-brand" aria-label="Impeccable home"> <svg class="site-header-brand-logo" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="6" fill="#1a1a1a"></rect><text x="16" y="24" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="500" fill="#f5f3ef" text-anchor="middle">/</text></svg> <span class="site-header-brand-name">Impeccable</span> </a> <div class="site-header-right"> <nav class="site-header-nav" aria-label="Primary"> <a href="/" data-nav="home">Home</a> <a href="/designing" data-nav="designing">Designing</a> <a href="/docs" data-nav="docs" aria-current="page">Docs</a> <a href="/slop" data-nav="slop">Slop</a> <a href="/live-mode" data-nav="live">Live</a> </nav> <a href="https://github.com/pbakaus/impeccable" class="site-header-github" target="_blank" rel="noopener" aria-label="Impeccable on GitHub, 27k stars"> <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg> <span class="site-header-github-label">27k</span> <svg class="site-header-github-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.76 6.36L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.24-.91L12 2z"></path></svg> </a> </div> </header>  <main id="main">  <div class="tutorial-page" data-astro-cid-r73pl65u> <nav class="skills-breadcrumb" aria-label="Breadcrumb" data-astro-cid-r73pl65u> <a href="/docs" data-astro-cid-r73pl65u>Docs</a> <span aria-hidden="true" data-astro-cid-r73pl65u>/</span> <a href="/tutorials" data-astro-cid-r73pl65u>Tutorials</a> <span aria-hidden="true" data-astro-cid-r73pl65u>/</span> <span data-astro-cid-r73pl65u>Iterate on UI with Live Mode</span> </nav> <header class="sub-page-header" data-astro-cid-r73pl65u> <span class="sub-page-eyebrow" data-astro-cid-r73pl65u>Tutorial</span> <h1 class="sub-page-title" data-astro-cid-r73pl65u>Iterate on UI with Live Mode</h1> <p class="sub-page-lede" data-astro-cid-r73pl65u>Pick an element, generate three variants, accept one. Canvas-like iteration without leaving your code.</p> </header> <div class="skills-detail-body docs-body tutorial-body prose" data-astro-cid-r73pl65u> <h2 id="what-youll-build">What you’ll build</h2>
+<p>You will use <code>/impeccable live</code> on your dev server to iterate on a single piece of UI (a hero, a card, a section) and end with one of three AI-generated variants written back to source as real code. You’ll see the canvas-style picking, annotation, and three-up cycling flow.</p>
+<p>Total time: about ten minutes. Most of that is picking what to iterate on.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Impeccable installed (see <a href="/tutorials/getting-started">getting started</a> if you have not). Run <code>/impeccable teach</code> first if you haven’t yet: variants lean on <code>PRODUCT.md</code> and <code>DESIGN.md</code> for brand fit.</li>
+<li>A running dev server with HMR (Vite, Next.js, SvelteKit, Astro, Nuxt, Bun) OR a static HTML file open in a browser.</li>
+<li>A page with at least one piece of UI you’d like to iterate on. A newsletter card, a hero, a pricing tier, something small enough to hold in your head.</li>
+</ul>
+<h2 id="step-1-start-live-mode">Step 1. Start live mode</h2>
+<p>From your harness, run:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>/impeccable live</span></span></code></pre>
+<p>The skill starts a small local helper server on port 8400 and injects a <code>&#x3C;script></code> tag into your dev entry file that loads the picker. If your project has a strict Content Security Policy, the first run detects it and offers a one-time, dev-only patch for <code>script-src</code> and <code>connect-src</code>. Accept the patch: it is guarded by <code>NODE_ENV === "development"</code> and you can revert any time.</p>
+<p>Open your dev server URL (not port 8400, that’s the helper server, not the app). You’ll see a dark pill at the bottom of the page with <strong>Pick</strong> highlighted.</p>
+<h2 id="step-2-pick-an-element">Step 2. Pick an element</h2>
+<div class="docs-viz-step">
+  <div class="docs-viz-picker-row">
+    <div class="docs-viz-picker-target">
+      <span class="docs-viz-picker-pin">1</span>
+      Newsletter signup
+      <span class="docs-viz-picker-note">more playful</span>
+    </div>
+  </div>
+</div>
+<p>Click the element you want to iterate on. A picker outline appears around it, and a light context bar pops up next to the selection with a command chip on the left and a freeform text field.</p>
+<p>A few things you can do before pressing Go:</p>
+<ul>
+<li><strong>Click the command chip</strong> (default is <code>impeccable</code>, the freeform action). Pick a specific action like <code>bolder</code>, <code>delight</code>, <code>layout</code>, or <code>typeset</code> to constrain the variants along one dimension.</li>
+<li><strong>Type in the freeform field.</strong> “More playful.” “Less SaaS.” “Feel like a newsletter from a magazine.”</li>
+<li><strong>Drop a comment pin</strong> by clicking anywhere on the picked element. The pin’s position matters: a comment near the title is about the title, not the whole element.</li>
+<li><strong>Draw a stroke</strong> by dragging across the element. Closed loop = “this part matters.” Arrow = direction. Cross = “delete this.” The skill reads strokes by shape, not by pixel content.</li>
+</ul>
+<p>When the brief feels clear, hit <strong>Go</strong>.</p>
+<h2 id="step-3-cycle-through-the-three-variants">Step 3. Cycle through the three variants</h2>
+<div class="docs-viz-step">
+  <div class="docs-viz-variants">
+    <div class="docs-viz-variant docs-viz-variant--v1">
+      <span class="docs-viz-variant-badge">1 / 3</span>
+      <span class="docs-viz-variant-kicker">No. 04</span>
+      <p class="docs-viz-variant-title">Letters, <em>occasionally</em>.</p>
+      <span class="docs-viz-variant-btn">Send me one</span>
+    </div>
+    <div class="docs-viz-variant docs-viz-variant--v2 is-active">
+      <span class="docs-viz-variant-badge">2 / 3</span>
+      <span class="docs-viz-variant-kicker">Dispatch</span>
+      <p class="docs-viz-variant-title">Design notes, <br>every other<br>Thursday.</p>
+      <span class="docs-viz-variant-btn">Join →</span>
+    </div>
+    <div class="docs-viz-variant docs-viz-variant--v3">
+      <span class="docs-viz-variant-badge">3 / 3</span>
+      <span class="docs-viz-variant-kicker">Field Notes</span>
+      <p class="docs-viz-variant-title">A monthly letter, for people who still read email.</p>
+      <span class="docs-viz-variant-btn">Receive ✺</span>
+    </div>
+  </div>
+</div>
+<p>You’ll see a spinner (“Generating variants…”) and within a few seconds, three variants hot-swap into the page in place. Not a preview, the actual rendered DOM on your actual dev server with your actual context.</p>
+<p>Use the arrow keys (or the prev / next buttons on the context bar) to cycle through them. A counter at the top right shows <code>1 / 3</code>, <code>2 / 3</code>, <code>3 / 3</code>.</p>
+<p>The three variants are designed to be <strong>genuinely different</strong>, not three riffs on one idea. Freeform variants anchor to three different design archetypes (broadsheet masthead, oversized-glyph poster, catalog-style spec rows, and so on). Action-specific variants vary along the dimension the action names: <code>colorize</code> gives you three hue families, <code>animate</code> gives you three motion vocabularies, <code>layout</code> gives you three structural arrangements.</p>
+<p>If two variants feel like they rhyme, that is the skill’s “squint test” failure mode. You can tell the picker “try again, all three felt too similar” and get a fresh set.</p>
+<h2 id="step-4-accept-one">Step 4. Accept one</h2>
+<div class="docs-viz-step" style="text-align:center">
+  <span class="docs-viz-accept-pill">Variant 2 written to source</span>
+</div>
+<p>When you find the one you like, click <strong>Accept</strong> on the context bar (or press Enter). Three things happen:</p>
+<ol>
+<li>The picked element is replaced with the accepted variant on the page.</li>
+<li>The variant is written back to source: the same file your picker was injected into, or the component source if live detected a generated file during step 1.</li>
+<li>If the accept touched CSS, the relevant rules are consolidated into your project’s real stylesheet, not left inline.</li>
+</ol>
+<p>Discard all three (press Escape) and the original stays. No trace, no commented-out leftovers.</p>
+<h2 id="step-5-stop-live-mode">Step 5. Stop live mode</h2>
+<p>When you are done iterating, stop the helper:</p>
+<ul>
+<li>Say <strong>“stop live mode”</strong> in your harness chat, or</li>
+<li>Click the <strong>×</strong> on the picker pill, or</li>
+<li>Close the browser tab: the helper detects the dropped connection after eight seconds and exits cleanly.</li>
+</ul>
+<p>The stop also strips the <code>&#x3C;script></code> tag from your dev entry and stops the helper server on port 8400.</p>
+<h2 id="what-to-try-next">What to try next</h2>
+<ul>
+<li>Run <code>/impeccable live</code> on a different page after a <code>/impeccable polish</code> pass to A/B the polished version against two more directions.</li>
+<li>Pair with <a href="/tutorials/critique-with-overlay">critique with the overlay</a>: run critique first, fix priority issues, then use live to explore redirections on the element critique flagged.</li>
+<li>Reach for <code>/impeccable craft</code> when you want the shape-then-build flow (a new feature end-to-end, not a single element).</li>
+</ul>
+<h2 id="common-issues">Common issues</h2>
+<ul>
+<li><strong>The picker never appears on the page.</strong> Either the helper did not start (look for errors in the terminal) or CSP is blocking the inject. Re-run <code>/impeccable live</code> and let it re-check CSP. If you declined the patch on first run, delete the <code>cspChecked</code> line in <code>.impeccable/live/config.json</code> and re-run.</li>
+<li><strong>“element lives in a generated file”</strong> on Go. Live detected that the picked element is in a compiled output, not a source file. It routes the accept through a fallback path so the variant still lands in true source. Follow the hint; don’t force-accept into the generated file.</li>
+<li><strong>Variants don’t feel brand-aligned.</strong> Check that <code>PRODUCT.md</code> and <code>DESIGN.md</code> exist at the project root. Without them, live leans toward generic defaults. Run <code>/impeccable teach</code> and <code>/impeccable document</code> first.</li>
+<li><strong>The helper port is in use.</strong> Another live session left its server running. <code>npx impeccable live stop</code> releases the port.</li>
+</ul> </div> </div>  </main> <footer class="site-footer"> <div class="footer-row"> <span class="footer-logo">Impeccable</span> <nav class="footer-links" aria-label="Footer"> <a href="/designing">Designing</a> <a href="/docs">Docs</a> <a href="/slop">Slop</a> <a href="/live-mode">Live Mode</a> <a href="/privacy">Privacy</a> <a href="https://github.com/pbakaus/impeccable">GitHub</a> </nav> <div class="footer-credit"> <span>Created by <a href="https://x.com/pbakaus" target="_blank" rel="noopener">Paul Bakaus</a></span> <a href="https://x.com/pbakaus" class="footer-social-link" aria-label="Follow on X" target="_blank" rel="noopener"> <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"> <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path> </svg> </a> <a href="https://linkedin.com/in/paulbakaus" class="footer-social-link" aria-label="Connect on LinkedIn" target="_blank" rel="noopener"> <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"> <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path> </svg> </a> </div> </div> </footer>  </body></html>

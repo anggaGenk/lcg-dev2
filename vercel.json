@@ -1,6 +1,6 @@
 {
   "framework": null,
-  "installCommand": "bun install",
-  "buildCommand": "npx astro build",
+  "installCommand": "echo 'no install needed'",
+  "buildCommand": "echo 'serving prebuilt output'",
   "outputDirectory": "build"
 }
